@@ -1,5 +1,4 @@
 // Entrypoint for the action
-
 const core = require("@actions/core");
 const github = require("@actions/github");
 const https = require("https");
