@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Go version](https://img.shields.io/badge/go-1.22+-00ADD8.svg)](https://golang.org)
-[![CI](https://github.com/username/repo/actions/workflows/ci.yml/badge.svg)](https://github.com/username/repo/actions)
+[![CI](https://github.com/travboz/writing-custom-actions/actions/workflows/greet.yaml/badge.svg)](https://github.com/travboz/writing-custom-actions/actions/workflows/greet.yaml)
 
 ## What it does
 
