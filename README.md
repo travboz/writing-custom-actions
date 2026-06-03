@@ -3,7 +3,7 @@
 > Custom actions of each type for education and mistake making.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![CI](https://github.com/travboz/writing-custom-actions/actions/workflows/ci.yaml/badge.svg?event=workflow_dispatch)](https://github.com/travboz/writing-custom-actions/actions/workflows/ci.yaml)
+[![Workflow status badge: greeting](https://github.com/travboz/writing-custom-actions/actions/workflows/ci.yaml/badge.svg?branch=main&event=workflow_dispatch&label=My+Custom+Label)](https://github.com/travboz/writing-custom-actions/actions/workflows/ci.yaml)
 [![Go version](https://img.shields.io/badge/go-1.22+-00ADD8.svg)](https://golang.org)
 
 ## What it does
