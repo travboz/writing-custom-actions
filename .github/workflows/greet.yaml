@@ -1,0 +1,20 @@
+name: Dummy greeting action for badge
+run-name: ${{ github.actor }} is greeting you in this action so he can get his badge!
+
+on:
+  workflow_dispatch:
+    inputs:
+      greetee:
+        description: The name of the person to be greeted
+        required: true
+        type: string
+        
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      # Greet the person using this workflow
+      - name: Print out the greeting using the input name
+        run: |
+          echo "Hello there, ${{ inputs.greetee }}. I hope you are well!"
