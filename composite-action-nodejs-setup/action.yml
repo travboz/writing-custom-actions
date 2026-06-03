@@ -1,0 +1,52 @@
+# Composite Action that sets up a Node.js project
+name: Setup a Node.js project
+description: Sets up Node.js, installs dependencies with caching, and runs linting
+author: travboz
+
+inputs:
+  node-version:
+    description: Node.js version to use
+    required: false
+    default: "20"
+  working-directory:
+    description: Directory containing package.json
+    required: false
+    default: "."
+
+outputs:
+  cache-hit:
+    description: "Whether the cache was hit"
+    value: ${{ steps.cache.outputs.cache-hit }}
+
+# Composite actions use 'composite' as the using value
+runs:
+  using: composite
+  steps:
+    # Step 1: Set up the specified Node.js version
+    - name: Setup Node.js using the version specified by the input
+      uses: actions/setup-node@v6.4.0
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    # Step 2: Cache node_modules for faster subsequent runs
+    - name: Cache dependencies
+      id: dep-cache
+      uses: actions/cache@v5.0.5
+      with:
+        path: ${{ inputs.working-directory }}/node_modules
+        key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/package-lock.json', inputs.working-directory)) }}
+        restore-keys: |
+          node-modules-${{ runner.os }}
+
+    # Step 3: Install dependencies if cache missed
+    - name: Install app dependencies
+      if: steps.dep-cache.outputs.cache-hit != 'true'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm ci
+
+    # Step 4: Run linting as part of setup
+    - name: Run linter
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm run lint --if-present

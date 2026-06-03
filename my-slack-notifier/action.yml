@@ -1,0 +1,28 @@
+# This file defines the action's metadata and interface
+
+name: Slack Deployment Notifier
+description: Posts deployment notifications to a Slack channel
+author: travboz
+
+# Define the inputs to the action
+inputs:
+  webook-url:
+    description: Slack incoming webhook URL
+    required: true
+  environment:
+    description: Deployment environment (staging | production)
+    required: true
+    default: staging
+  status:
+    description: Deployment status (success | failure)
+    required: true
+
+# Define what the action outputs for subsequent steps
+outputs:
+  message-timestamp:
+    description: Timestamp of the post Slack message
+
+# Specify that this is a JavaScript action running on Node 20
+runs:
+  using: node20
+  main: index.js
