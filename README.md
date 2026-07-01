@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Greeting workflow for badge](https://img.shields.io/github/actions/workflow/status/travboz/writing-custom-actions/.github%2Fworkflows%2Fci.yaml?branch=main&event=workflow_dispatch&label=Greeting%20workflow)
 [![Go version](https://img.shields.io/badge/go-1.22+-00ADD8.svg)](https://golang.org)
-[![Tutorial](https://img.shields.io/badge/tutorial-GitHub%20Actions%20Certification-green.svg)](https://oneuptime.com/blog/post/2026-01-30-github-actions-custom-actions/view)
+![Tutorial](https://img.shields.io/badge/Follow_the_original_tutorial-Link-informational?link=https%3A%2F%2Foneuptime.com%2Fblog%2Fpost%2F2026-01-30-github-actions-custom-actions%2Fview)
 
 ## What it does
 
