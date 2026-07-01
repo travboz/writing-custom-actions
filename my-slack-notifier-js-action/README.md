@@ -30,7 +30,7 @@ Local timestamp recorded after Slack accepts the webhook request.
 - name: Send a deployment notification using Slack custom JavaScript action
   uses: travboz/my-slack-notifier-js-action@v1
   with:
-    webhook-url: "https://hooks.slack.com/services/TXXXXXXXX/BXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
+    webhook-url: "https://hooks.slack.com/services/<YOUR_TEAM_ID>/<YOUR_WEBHOOK_ID>/<YOUR_WEBHOOK_SECRET>"
     environment: "staging"
     status: "${{ steps.some-step-id.outcome }}"
 ```
